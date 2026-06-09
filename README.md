@@ -1,9 +1,8 @@
 # Azure VM Remote Connection – Lab Report
 
 > **Assignment:** Configure, connect to, and secure Azure Virtual Machines using RDP (Windows) and SSH (Linux).  
-> **Submitted by:** [Your Name]  
-> **Date:** [Submission Date]  
-> **Program:** 3MTT / [Your Institution]
+> **Submitted by:** Abdulsalam Olarinoye Bashir  
+> **Program:** 3MTT / DHF
 
 ---
 
@@ -33,15 +32,17 @@ This lab demonstrates the end-to-end process of remotely connecting to Azure Vir
 
 ### Steps Taken
 
-1. Navigated to **Azure Portal → Virtual Machines → [VM Name] → Networking**.
+1. Navigated to **Azure Portal → Virtual Machines → bashlawVM → Networking**.
 2. Opened the linked **Network Security Group (NSG)**.
 3. Selected **Inbound security rules → Add**.
 4. Created the following rules:
 
 | Rule Name         | Priority | Protocol | Port  | Source          | Action |
 |-------------------|----------|----------|-------|-----------------|--------|
-| Allow-RDP         | 300      | TCP      | 3389  | My IP (initial) | Allow  |
-| Allow-SSH         | 310      | TCP      | 22    | My IP (initial) | Allow  |
+| Allow-HTTP        | 300      | TCP      | 80	  | xxxxxxxxxxxxxxx | Allow  |
+| Allow-SSH         | 310      | TCP      | 22    | xxxxxxxxxxxxxxx	| Allow  |
+
+![Inbound] (screenshots/ssh_allow_screen.png)
 
 5. Saved the rules and confirmed they appeared under **Inbound security rules**.
 
