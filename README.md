@@ -42,7 +42,7 @@ This lab demonstrates the end-to-end process of remotely connecting to Azure Vir
 | Allow-HTTP        | 300      | TCP      | 80	  | xxxxxxxxxxxxxxx | Allow  |
 | Allow-SSH         | 310      | TCP      | 22    | xxxxxxxxxxxxxxx	| Allow  |
 
-! [Inbound] (screenshots/ssh_allow_screen.png)
+![Inbound](screenshots/ssh_allow_screen.png)
 
 5. Saved the rules and confirmed they appeared under **Inbound security rules**.
 
