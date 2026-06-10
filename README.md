@@ -54,16 +54,15 @@ This lab demonstrates the end-to-end process of remotely connecting to Azure Vir
 
 ### Steps Taken
 
-1. Navigated to **Azure Portal → Virtual Machines → [VM Name] → Overview**.
-2. Located the **Public IP address** field in the Essentials panel.
+1. Navigated to **Azure Portal → Virtual Machines → bashlawVM → Overview**.
+2. Located the **Public IP address** field in the Overview panel.
 3. Recorded the public IP addresses:
 
 | VM Name          | OS      | Public IP Address  |
 |------------------|---------|--------------------|
-| [Windows VM Name]| Windows | `[e.g. 20.x.x.x]` |
 | [Linux VM Name]  | Linux   | `[e.g. 52.x.x.x]` |
 
-> **Screenshot:** See [screenshots/public-ip.png](screenshots/public-ip.png)
+> **Screenshot:** See ![screenshots/vm_overview_screen.png](screenshots/vm_overview_screen.png)
 
 ---
 
@@ -107,7 +106,7 @@ ssh azureuser@[Linux VM Public IP]
 4. (For key auth) Navigated to **Connection → SSH → Auth** and loaded the `.ppk` private key.
 5. Clicked **Open** and logged in with `azureuser`.
 
-> **Screenshot:** See [screenshots/ssh-connection.png](screenshots/ssh-connection.png)
+> **Screenshot:** See ![screenshots/ssh_login_screen.png](screenshots/ssh_login_screen.png)
 
 ---
 
@@ -155,7 +154,7 @@ top
 df -h
 ```
 
-> **Screenshot:** See [screenshots/linux-system-access.png](screenshots/linux-system-access.png)
+> **Screenshot:** See [screenshots/cli_screen.png](screenshots/cli_screen.png)
 
 ---
 
@@ -204,8 +203,8 @@ logout
 
 | Rule Name   | Priority | Protocol | Port | Source IP / CIDR   | Direction | Action |
 |-------------|----------|----------|------|--------------------|-----------|--------|
-| Allow-RDP   | 300      | TCP      | 3389 | `[Your IP]/32`     | Inbound   | Allow  |
-| Allow-SSH   | 310      | TCP      | 22   | `[Your IP]/32`     | Inbound   | Allow  |
+| Allow-RDP   | 300      | TCP      | 3389 | `[Your IP]/24`     | Inbound   | Allow  |
+| Allow-SSH   | 310      | TCP      | 22   | `[Your IP]/24`     | Inbound   | Allow  |
 | DenyAllInbound | 65500 | Any     | Any  | Any                | Inbound   | Deny   |
 
 > The default `DenyAllInbound` rule (Azure default) blocks all traffic not explicitly allowed by higher-priority rules.
@@ -230,13 +229,12 @@ Place your screenshot files in a `screenshots/` folder in this repository.
 
 ```
 screenshots/
-├── public-ip.png               # Azure portal showing VM public IP
-├── nsg-rules.png               # NSG inbound rules configuration
+├── vm_overview_screen.png               # Azure portal showing VM public IP
+├── restrict_screen.png             # NSG inbound rules configuration
 ├── rdp-connection.png          # Active Windows RDP desktop session
-├── ssh-connection.png          # Active Linux SSH terminal session
+├── ssh_login_screen.png          # Active Linux SSH terminal session
 ├── windows-system-access.png   # systeminfo / ipconfig output on Windows VM
-├── linux-system-access.png     # uname -a / df -h output on Linux VM
-└── nsg-restricted.png          # NSG rules after IP restriction (Task 6)
+├── sh_login_screen.png        # uname -a / df -h output on Linux VM
+└── or restricted_result_screen.png      # NSG rules after IP restriction (Task 6)
 ```
 
-> Replace placeholder values (IPs, VM names, dates) with your actual lab data before submission.
