@@ -154,7 +154,7 @@ top
 df -h
 ```
 
-> **Screenshot:** See [screenshots/cli_screen.png](screenshots/cli_screen.png)
+> **Screenshot:** See ![screenshots/cli_screen.png](screenshots/cli_screen.png)
 
 ---
 
